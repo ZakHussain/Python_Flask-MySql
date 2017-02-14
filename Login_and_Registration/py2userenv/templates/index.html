@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Email Database</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my.css') }}">
+	
+</head>
+<body>
+	<div id="container" >
+		<div>
+			<img id="img" src="{{ url_for('static', filename='img/homescreen.gif')}}">
+			<div id="login_container">
+				<h1><span class="font_style"> Welcome, Please Log In </span></h1>
+				{% with messages = get_flashed_messages(category_filter=['Login']) %}
+					{% if messages%}
+						{% for message in messages %}
+							<p>{{message}}</p>
+						{% endfor %}
+					{% endif %}
+				{% endwith %}
+				<form action="/login" method='post'>
+					<input name="user_email" type="text" class="form-control margin_space" placeholder="email">
+					<input name="user_password" type="text" class="form-control margin_space" placeholder="password">
+				<button type="submit" class="btn btn-primary margin_space">LOGIN</button>	
+				</form>
+				<hr>
+			</div>
+			<div id="form_container">
+				<h1><span class="font_style">Or Register</span></h1>
+				{% with messages = get_flashed_messages(category_filter=['Register']) %}
+					{% if messages %}
+						{% for message in messages %}
+							<p>{{message}}</p>
+						{% endfor %}
+					{% endif %}
+				{% endwith %}
+				<form action="/process" method='post'>
+					<input name="first_name" type="text" class="form-control margin_space" placeholder="first name">
+					<input name="last_name" type="text" class="form-control margin_space" placeholder="last name">
+					<input name="email" type="text" class="form-control margin_space" placeholder="email">
+					<input name="password" type="text" class="form-control margin_space" placeholder="password">
+					<input name="confirmation" type="text" class="form-control margin_space" placeholder="confirm password">
+					<button type="submit" class="btn btn-primary margin_space">REGISTER</button>	
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+*{
+	/*border: 1px dotted white;*/
+}
+#container {
+	background: -webkit-radial-gradient(#edba85, #56001d, #030002, #030002);
+	min-height: 1062px;
+}
+
+	#img {
+	    opacity: .10;
+	    height: 420px;
+	    margin-left: 265px;
+	    width: 435px;
+	    border: 2px grey solid;
+	    border-radius: 240px;
+	}
+	#login_container{
+   		margin-left: 488px;
+    	width: 345px;
+	}
+	#form_container{
+   		margin-left: 488px;
+    	width: 345px;
+	}
+		span.font_style{
+			color: white; 
+			font-size: 30px;
+		}
+		.margin_space{
+			margin: 5px;
+		}
